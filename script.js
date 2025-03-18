@@ -1,30 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Website Loaded!");
+    console.log("Website Loaded! 🌸");
+
+    // Panggil fungsi untuk membuat bunga jatuh setiap 300ms
+    setInterval(createFlower, 300);
 });
-function createMoney() {
-    let money = document.createElement("div");
-    money.innerHTML = "💵"; // Bisa diganti dengan 💰 atau 💴 💶 💷
-    money.style.position = "absolute";
-    money.style.left = Math.random() * window.innerWidth + "px"; 
-    money.style.top = "-50px"; // Mulai dari atas layar
-    money.style.fontSize = Math.random() * 20 + 30 + "px"; 
-    money.style.opacity = Math.random() * 0.7 + 0.3; 
-    document.body.appendChild(money);
+
+function createFlower() {
+    let flower = document.createElement("div");
+    flower.innerHTML = "🌸"; // Bisa diganti dengan emoji lain seperti 🌺 atau 🌼
+    flower.style.position = "fixed";
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.top = "-50px"; // Mulai dari atas layar
+    flower.style.fontSize = Math.random() * 20 + 20 + "px";
+    flower.style.opacity = Math.random() * 0.8 + 0.2;
+    flower.style.zIndex = "999";
+
+    document.body.appendChild(flower);
 
     let speed = Math.random() * 3 + 2;
-    let rotate = Math.random() * 360;
+    let angle = Math.random() * 10 - 5; // Sedikit efek angin
     let move = setInterval(() => {
-        let currentTop = parseFloat(money.style.top);
-        rotate += 5; 
+        let currentTop = parseFloat(flower.style.top) || 0;
         if (currentTop > window.innerHeight) {
             clearInterval(move);
-            money.remove();
+            flower.remove();
         } else {
-            money.style.top = currentTop + speed + "px";
-            money.style.transform = rotate(${rotate}deg);
-        }
-    }, 50);
+            flower.style.top = currentTop + speed + "px";
+            flower.style.left = parseFloat(flower.style.left) + angle + "px";
+        }
+    }, 50);
 }
-
-// Buat uang jatuh setiap 200ms
-setInterval(createMoney, 200);
