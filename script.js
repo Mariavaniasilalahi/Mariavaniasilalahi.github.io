@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
         flower.classList.add("bunga");
         flower.innerHTML = "🌸"; // Emoji bunga
 
-        // Posisi awal bunga secara random
+        // Posisi awal bunga secara acak
         flower.style.left = Math.random() * window.innerWidth + "px";
-        flower.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Durasi jatuh
+        flower.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Durasi jatuh acak
 
         document.body.appendChild(flower);
 
