@@ -1,14 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animasi Bunga Berjatuhan</title>
+    <title>Perpustakaan Digital Maria</title>
     <style>
         body {
-            background-color: pink; /* Warna latar belakang */
-            overflow: hidden;
+            background-color: #E6E6FA; /* Warna lilac */
             margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: #4B0082;
+        }
+
+        header {
+            background-color: #D8BFD8; /* Lilac lebih gelap */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .menu li a {
+            text-decoration: none;
+            color: #4B0082;
+            font-weight: bold;
+        }
+
+        nav .menu li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            font-size: 1.2em;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #9370DB;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #7A5FBA;
         }
 
         .bunga {
@@ -16,6 +77,7 @@
             top: -50px;
             font-size: 24px;
             animation: jatuh linear infinite;
+            color: white;
         }
 
         @keyframes jatuh {
@@ -28,71 +90,60 @@
                 opacity: 0;
             }
         }
+
+        footer {
+            background-color: #D8BFD8;
+            color: #4B0082;
+            text-align: center;
+            padding: 20px 10px;
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Memanggil script.js -->
-    <script src="script.js"></script>
-
-</body>
-</html>
-    <title>My GitHub Website</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
     <header>
+        <div class="logo">Perpustakaan Maria</div>
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Selamat datang di perpustakaan online Maria</h1>
-        <b1>Selamat datang di Perpustakaan Digital Maria – Membuka Pintu Pengetahuan dengan Teknologi Terkini.</b1></p>
+        <h1>Selamat Datang di Perpustakaan Online Maria</h1>
+        <p class="description">Membuka Pintu Pengetahuan dengan Teknologi Terkini.</p>
+        <p>Klik tombol di bawah untuk mengunjungi Perpustakaan STIKOM Bali:</p>
+        <a href="https://library.stikom-bali.ac.id/" target="_blank" class="btn">Kunjungi Perpustakaan STIKOM Bali</a>
     </main>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Saya</title>
-    <style>
-        h1 {
-    text-align: center;
+
+    <footer>
+        &copy; 2025 Perpustakaan Maria. All rights reserved.
+    </footer>
+
+    <!-- Animasi bunga berjatuhan -->
+    <script>
+        function createBunga() {
+            const bunga = document.createElement('div');
+            bunga.classList.add('bunga');
+            bunga.style.left = Math.random() * 100 + "vw";
+            bunga.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            bunga.innerText = "🌸";
+
+            document.body.appendChild(bunga);
+
+            setTimeout(() => {
+                bunga.remove();
+            }, 5000);
         }
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+        setInterval(createBunga, 300);
+    </script>
 
-    <p>Klik tombol di bawah untuk mengunjungi Perpustakaan STIKOM Bali:</p>
-
-    <a href="https://library.stikom-bali.ac.id/" target="_blank" class="btn">
-        Kunjungi Perpustakaan STIKOM Bali
-    </a>
-
-</body>
-</html>
-    <script src="script.js"></script>
 </body>
 </html>
