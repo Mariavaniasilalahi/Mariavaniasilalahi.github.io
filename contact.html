@@ -10,6 +10,9 @@
       font-family: Arial, sans-serif;
       background-color: #E6E6FA; /* Lilac */
       color: #4B0082;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Membuat body memenuhi seluruh tinggi layar */
     }
 
     header {
@@ -47,6 +50,7 @@
     main {
       padding: 40px 20px;
       text-align: center;
+      flex: 1; /* Agar bagian utama memanfaatkan sisa ruang yang tersedia */
     }
 
     h1 {
@@ -129,7 +133,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Perpustakaan Maria.
+    &copy; 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
   </footer>
 
   <script>
