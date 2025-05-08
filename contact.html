@@ -7,16 +7,16 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #E6E6FA; /* Lilac */
+      font-family: Arial, sans-serif; /* Menggunakan font lokal */
+      background-color: #E6E6FA;
       color: #4B0082;
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Membuat body memenuhi seluruh tinggi layar */
+      min-height: 100vh;
     }
 
     header {
-      background-color: #D8BFD8; /* Thistle (soft lilac) */
+      background-color: rgba(216, 191, 216, 0.8); /* Semi-transparan */
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
@@ -24,8 +24,8 @@
     }
 
     .logo {
-      font-size: 1.5em;
-      font-weight: bold;
+      font-size: 1.8em;
+      font-weight: 600;
       color: #741C28;
     }
 
@@ -40,62 +40,88 @@
     nav .menu li a {
       text-decoration: none;
       color: #741C28;
-      font-weight: bold;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
     }
 
     nav .menu li a:hover {
-      text-decoration: underline;
+      color: #4B0082;
     }
 
     main {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
-      flex: 1; /* Agar bagian utama memanfaatkan sisa ruang yang tersedia */
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     h1 {
       color: #741C28;
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
 
     .contact-form {
-      background-color: #D8BFD8;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 10px;
+      background-color: rgba(216, 191, 216, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 500px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-form:hover {
+      transform: scale(1.05);
     }
 
     label {
       display: block;
       margin: 10px 0 5px;
+      font-weight: 600;
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
       border: 1px solid #4B0082;
-      border-radius: 5px;
+      border-radius: 10px;
+      font-size: 1em;
     }
 
     button {
       background-color: #741C28;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
       background-color: #6B1323;
+      transform: scale(1.1);
     }
 
     footer {
-      background-color: #D8BFD8;
+      background-color: rgba(216, 191, 216, 0.8);
       color: #741C28;
       text-align: center;
       padding: 15px 10px;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .contact-form {
+        width: 100%;
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -112,24 +138,26 @@
   </header>
 
   <main>
-    <h1>Hubungi Kami</h1>
+    <div>
+      <h1>Hubungi Kami</h1>
 
-    <section class="contact-form">
-      <h2>Kami Senang Mendengar dari Anda</h2>
-      <form id="contactForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+      <section class="contact-form">
+        <h2>Kami Senang Mendengar dari Anda</h2>
+        <form id="contactForm">
+          <label for="name">Nama:</label>
+          <input type="text" id="name" name="name" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Pesan:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
-      </form>
-      <p id="responseMessage"></p>
-    </section>
+          <button type="submit">Kirim Pesan</button>
+        </form>
+        <p id="responseMessage"></p>
+      </section>
+    </div>
   </main>
 
   <footer>
@@ -139,8 +167,8 @@
   <script>
     // Script untuk menangani formulir pengiriman
     document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Mencegah pengiriman formulir untuk tujuan pengujian
-      document.getElementById("responseMessage").innerText = "Your message has been sent!";
+      event.preventDefault();
+      document.getElementById("responseMessage").innerText = "Pesan Anda telah dikirim!";
     });
   </script>
 
