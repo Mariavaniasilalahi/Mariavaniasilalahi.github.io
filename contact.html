@@ -7,8 +7,8 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif; /* Menggunakan font lokal */
-      background-color: #E6E6FA;
+      font-family: 'Arial', sans-serif;
+      background-color: #EAC891; /* Sunset */
       color: #4B0082;
       display: flex;
       flex-direction: column;
@@ -16,7 +16,7 @@
     }
 
     header {
-      background-color: rgba(216, 191, 216, 0.8); /* Semi-transparan */
+      background-color: rgba(174, 67, 30, 0.8); /* Chile Rojo Semi-transparan */
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
@@ -26,7 +26,7 @@
     .logo {
       font-size: 1.8em;
       font-weight: 600;
-      color: #741C28;
+      color: #FFFFFF;
     }
 
     nav .menu {
@@ -39,7 +39,7 @@
 
     nav .menu li a {
       text-decoration: none;
-      color: #741C28;
+      color: #FFFFFF;
       font-weight: 600;
       text-transform: uppercase;
       transition: color 0.3s ease;
@@ -56,45 +56,58 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     h1 {
-      color: #741C28;
+      color: #AE431E; /* Chile Rojo */
       font-size: 2.5em;
       margin-bottom: 20px;
+      animation: fadeIn 1s ease-out;
     }
 
     .contact-form {
-      background-color: rgba(216, 191, 216, 0.9);
+      background-color: rgba(174, 67, 30, 0.1); /* Chile Rojo Semi-transparan */
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       width: 90%;
       max-width: 500px;
       transition: transform 0.3s ease;
+      animation: slideUp 1s ease-out;
     }
 
     .contact-form:hover {
       transform: scale(1.05);
     }
 
+    h2 {
+      color: #AE431E;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
     label {
       display: block;
       margin: 10px 0 5px;
       font-weight: 600;
+      color: #AE431E;
+      animation: fadeIn 2s ease-out;
     }
 
     input, textarea {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
-      border: 1px solid #4B0082;
+      border: 1px solid #AE431E;
       border-radius: 10px;
-      font-size: 1em;
+      font-size: 1.1em;
+      animation: fadeIn 3s ease-out;
     }
 
     button {
-      background-color: #741C28;
+      background-color: #AE431E;
       color: white;
       padding: 12px 20px;
       border: none;
@@ -102,6 +115,9 @@
       cursor: pointer;
       font-weight: bold;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 100%;
+      margin-top: 20px;
+      animation: fadeIn 4s ease-out;
     }
 
     button:hover {
@@ -110,10 +126,33 @@
     }
 
     footer {
-      background-color: rgba(216, 191, 216, 0.8);
-      color: #741C28;
+      background-color: rgba(174, 67, 30, 0.8); /* Chile Rojo */
+      color: #FFFFFF;
       text-align: center;
       padding: 15px 10px;
+    }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     /* Responsif */
@@ -142,7 +181,7 @@
       <h1>Hubungi Kami</h1>
 
       <section class="contact-form">
-        <h2>Kami Senang Mendengar dari Anda</h2>
+        <h2 style="color: #6B1323;">Kami Senang Mendengar dari Anda</h2>
         <form id="contactForm">
           <label for="name">Nama:</label>
           <input type="text" id="name" name="name" required>
@@ -155,7 +194,7 @@
 
           <button type="submit">Kirim Pesan</button>
         </form>
-        <p id="responseMessage"></p>
+        <p id="responseMessage" style="font-size: 1.2em; color: #AE431E;"></p>
       </section>
     </div>
   </main>
