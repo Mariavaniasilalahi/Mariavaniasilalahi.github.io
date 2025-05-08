@@ -7,87 +7,160 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #E6E6FA; /* Lilac */
+      font-family: 'Arial', sans-serif;
+      background-color: #D06224; /* Terracotta */
       color: #4B0082;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      transition: background-color 0.3s ease;
     }
 
     header {
-      background-color: #D8BFD8;
-      padding: 15px 30px;
+      background-color: #8A8635; /* Olive */
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInHeader 0.8s ease-out;
     }
 
     .logo {
-      font-size: 1.5em;
+      font-size: 2em;
       font-weight: bold;
-      color: #741C28;
+      color: #FFFFFF;
+      animation: fadeInLogo 0.8s ease-out;
     }
 
     nav .menu {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 30px;
       margin: 0;
       padding: 0;
+      animation: fadeInNav 0.8s ease-out;
     }
 
     nav .menu li a {
       text-decoration: none;
-      color: #741C28;
+      color: #FFFFFF;
       font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
     }
 
     nav .menu li a:hover {
-      text-decoration: underline;
+      color: #FFD700; /* Gold */
     }
 
     main {
       flex: 1;
-      padding: 40px 20px;
+      padding: 50px 30px;
       text-align: center;
+      animation: fadeInMain 0.8s ease-out;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      animation: slideUpTitle 0.8s ease-out;
     }
 
     p.description {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 30px;
       font-size: 1.1em;
+      color: #F4C542; /* Cream */
+      font-style: italic;
+      letter-spacing: 1px;
+      line-height: 1.6;
+      animation: fadeInDescription 0.8s ease-out;
     }
 
     table {
-      width: 60%;
+      width: 70%;
       margin: 0 auto;
       border-collapse: collapse;
       background: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeInTable 0.8s ease-out;
     }
 
     th, td {
-      padding: 12px;
+      padding: 15px;
       border: 1px solid #ddd;
+      text-align: center;
+      font-size: 1.1em;
     }
 
     th {
-      background-color: #f8b400;
+      background-color: #F8B400;
       color: white;
+      font-weight: bold;
     }
 
     a {
       text-decoration: none;
       color: #0073e6;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFD700;
     }
 
     footer {
-      background-color: #D8BFD8;
-      color: #741C28;
+      background-color: #8A8635;
+      color: #FFFFFF;
       text-align: center;
-      padding: 15px 10px;
+      padding: 20px 10px;
+      animation: fadeInFooter 0.8s ease-out;
     }
+
+    /* Animations */
+    @keyframes fadeInHeader {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInLogo {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInNav {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInMain {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUpTitle {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInDescription {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInTable {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInFooter {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
   </style>
 </head>
 <body>
