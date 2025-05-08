@@ -8,28 +8,32 @@
     html, body {
       height: 100%;
       margin: 0;
-      background-color: #E6E6FA; /* Old Lavender */
+      background-color: #D06224; /* Terracotta */
       font-family: Arial, sans-serif;
-      color: #4B0082;
+      color: #FFFFFF; /* Warna putih agar kontras */
     }
 
     body {
       display: flex;
       flex-direction: column;
+      overflow-x: hidden; /* Menghindari scroll horizontal */
     }
 
     header {
-      background-color: #D8BFD8;
+      background-color: #8A8635; /* Olive */
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      opacity: 0;
+      animation: slideInHeader 1s ease-out forwards; /* Animasi header */
     }
 
     .logo {
       font-size: 1.5em;
       font-weight: bold;
-      color: #741C28; /* Wine */
+      color: #FFFFFF;
+      animation: fadeInLogo 1s ease-out 0.5s forwards; /* Animasi logo */
     }
 
     nav .menu {
@@ -38,73 +42,154 @@
       margin: 0;
       display: flex;
       gap: 20px;
+      animation: fadeInNav 1.5s ease-out 1s forwards; /* Animasi menu */
     }
 
     nav .menu li a {
       text-decoration: none;
-      color: #741C28; /* Wine */
+      color: #FFFFFF;
       font-weight: bold;
     }
 
     nav .menu li a:hover {
       text-decoration: underline;
+      color: #FFD700;
     }
 
     main {
       flex: 1;
       text-align: center;
       padding: 50px 20px;
+      opacity: 0;
+      animation: fadeInMain 1s ease-out 2s forwards; /* Animasi main */
     }
 
     h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #741C28; /* Wine */
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      animation: slideUpTitle 1s ease-out forwards; /* Animasi judul */
     }
 
     p.description {
-      font-size: 1.2em;
+      font-size: 1.3em;
+      font-style: italic;
+      color: #F4C542;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      animation: fadeInDescription 1s ease-out 1.5s forwards; /* Animasi deskripsi */
     }
 
     .btn {
       display: inline-block;
-      background-color: #9370DB;
+      background-color: #FFD700;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-top: 20px;
+      font-size: 1.1em;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      animation: bounceBtn 1s ease-out 2s forwards; /* Animasi tombol */
     }
 
     .btn:hover {
-      background-color: #7A5FBA;
-    }
-
-    .bunga {
-      position: absolute;
-      top: -50px;
-      font-size: 24px;
-      animation: jatuh linear infinite;
-      color: white;
-    }
-
-    @keyframes jatuh {
-      0% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
+      background-color: #FFB200;
+      transform: translateY(-5px);
     }
 
     footer {
-      background-color: #D8BFD8;
-      color: #741C28; /* Wine */
+      background-color: #8A8635;
+      color: #FFFFFF;
       text-align: center;
       padding: 20px 10px;
+      animation: fadeInFooter 1s ease-out 2.5s forwards; /* Animasi footer */
     }
+
+    @keyframes slideInHeader {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInLogo {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInNav {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInMain {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUpTitle {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDescription {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceBtn {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInFooter {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -122,30 +207,14 @@
 
   <main>
     <h1>Selamat Datang di Perpustakaan Online Maria</h1>
-    <p class="description">Membuka Pintu Pengetahuan dengan Teknologi Terkini.</p>
-    <p>Klik tombol di bawah untuk mengunjungi Perpustakaan IPB:</p>
-    <a href="https://lib.ipb.ac.id/" target="_blank" class="btn">Kunjungi Perpustakaan IPB</a>
+    <p class="description">Temukan berbagai koleksi literasi digital untuk mendukung pendidikan dan penelitian Anda.</p>
+    <p>Ingin jelajah koleksi digital kampus ternama? Yuk langsung akses pustaka IPB di bawah ini!</p>
+    <a href="https://lib.ipb.ac.id/" target="_blank" class="btn">📚 Buka Perpustakaan IPB</a>
   </main>
 
   <footer>
     &copy; 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
   </footer>
-
-  <script>
-    function createBunga() {
-      const bunga = document.createElement('div');
-      bunga.classList.add('bunga');
-      bunga.style.left = Math.random() * 100 + "vw";
-      bunga.style.animationDuration = (Math.random() * 3 + 2) + "s";
-      bunga.innerText = "🌸";
-      document.body.appendChild(bunga);
-      setTimeout(() => {
-        bunga.remove();
-      }, 5000);
-    }
-
-    setInterval(createBunga, 300);
-  </script>
 
 </body>
 </html>
