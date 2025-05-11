@@ -8,32 +8,32 @@
     html, body {
       height: 100%;
       margin: 0;
-      background-color: #D06224; /* Terracotta */
+      background-color: #D06224;
       font-family: Arial, sans-serif;
-      color: #FFFFFF; /* Warna putih agar kontras */
+      color: #FFFFFF;
     }
 
     body {
       display: flex;
       flex-direction: column;
-      overflow-x: hidden; /* Menghindari scroll horizontal */
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #8A8635; /* Olive */
+      background-color: #8A8635;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       opacity: 0;
-      animation: slideInHeader 1s ease-out forwards; /* Animasi header */
+      animation: slideInHeader 1s ease-out forwards;
     }
 
     .logo {
       font-size: 1.5em;
       font-weight: bold;
       color: #FFFFFF;
-      animation: fadeInLogo 1s ease-out 0.5s forwards; /* Animasi logo */
+      animation: fadeInLogo 1s ease-out 0.5s forwards;
     }
 
     nav .menu {
@@ -42,7 +42,7 @@
       margin: 0;
       display: flex;
       gap: 20px;
-      animation: fadeInNav 1.5s ease-out 1s forwards; /* Animasi menu */
+      animation: fadeInNav 1.5s ease-out 1s forwards;
     }
 
     nav .menu li a {
@@ -61,14 +61,14 @@
       text-align: center;
       padding: 50px 20px;
       opacity: 0;
-      animation: fadeInMain 1s ease-out 2s forwards; /* Animasi main */
+      animation: fadeInMain 1s ease-out 2s forwards;
     }
 
     h1 {
       font-size: 2.5em;
       margin-bottom: 20px;
       color: #FFFFFF;
-      animation: slideUpTitle 1s ease-out forwards; /* Animasi judul */
+      animation: slideUpTitle 1s ease-out forwards;
     }
 
     p.description {
@@ -77,7 +77,7 @@
       color: #F4C542;
       margin-bottom: 20px;
       letter-spacing: 1px;
-      animation: fadeInDescription 1s ease-out 1.5s forwards; /* Animasi deskripsi */
+      animation: fadeInDescription 1s ease-out 1.5s forwards;
     }
 
     .btn {
@@ -90,7 +90,7 @@
       margin-top: 20px;
       font-size: 1.1em;
       transition: transform 0.3s ease, background-color 0.3s ease;
-      animation: bounceBtn 1s ease-out 2s forwards; /* Animasi tombol */
+      animation: bounceBtn 1s ease-out 2s forwards;
     }
 
     .btn:hover {
@@ -103,91 +103,49 @@
       color: #FFFFFF;
       text-align: center;
       padding: 20px 10px;
-      animation: fadeInFooter 1s ease-out 2.5s forwards; /* Animasi footer */
+      animation: fadeInFooter 1s ease-out 2.5s forwards;
     }
 
+    /* Animations */
     @keyframes slideInHeader {
-      0% {
-        transform: translateY(-100%);
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes fadeInLogo {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInNav {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeInMain {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes slideUpTitle {
-      0% {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes fadeInDescription {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes bounceBtn {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     @keyframes fadeInFooter {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
   </style>
@@ -201,8 +159,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- Menu Registrasi -->
-                    <li class="nav-item"><a class="nav-link" href="registration.html" id="registration">Registrasi</a></li>
+        <li><a href="registration.html">Registration</a></li> <!-- Diperbaiki -->
       </ul>
     </nav>
   </header>
