@@ -223,6 +223,89 @@
       </div>
     </div>
   </section>
+<head>
+    <meta charset="UTF-8">
+    <title>Event Perpustakaan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .event-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .event-item {
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            background-color: #f9f9f9;
+        }
+        .event-item:hover {
+            transform: translateY(-5px);
+        }
+        .event-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .event-item a {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .event-item a:hover {
+            text-decoration: underline;
+        }
+        .event-item p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .event-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Event Perpustakaan Terbaru</h1>
+
+    <div class="event-container">
+        <div class="event-item">
+            <img src="https://example.com/event1.jpg" alt="Poster Workshop Literasi Digital - Perpustakaan 2025">
+            <a href="https://example.com/event1" target="_blank">Workshop Literasi Digital</a>
+            <p>Pelatihan gratis untuk pelajar dan guru tentang penggunaan teknologi informasi.</p>
+        </div>
+        <div class="event-item">
+            <img src="https://example.com/event2.jpg" alt="Poster Lomba Baca Puisi Nasional - Perpustakaan 2025">
+            <a href="https://example.com/event2" target="_blank">Lomba Baca Puisi Nasional</a>
+            <p>Ajang kreativitas membaca puisi bagi siswa dari seluruh Indonesia.</p>
+        </div>
+        <div class="event-item">
+            <img src="https://example.com/event3.jpg" alt="Poster Pameran Buku dan Diskon - Perpustakaan 2025">
+            <a href="https://example.com/event3" target="_blank">Pameran Buku & Diskon Besar</a>
+            <p>Dapatkan diskon menarik untuk koleksi buku terbaru dan klasik.</p>
+        </div>
+    </div>
+
+</body>
+</html>
 
   <footer>
     &copy; 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
