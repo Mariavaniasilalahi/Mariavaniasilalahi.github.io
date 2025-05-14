@@ -93,6 +93,17 @@
       transform: translateY(-5px);
     }
 
+    .book-section {
+      background-color: #FFF3E0;
+      color: #000;
+      padding: 50px 20px;
+    }
+
+    .book-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
     footer {
       background-color: #8A8635;
       color: #FFFFFF;
@@ -101,7 +112,6 @@
       animation: fadeInFooter 1s ease-out 2s forwards;
     }
 
-    /* Updated Animations */
     @keyframes fadeInMain {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -149,66 +159,70 @@
     <p>Ingin jelajah koleksi digital kampus ternama? Yuk langsung akses pustaka IPB di bawah ini!</p>
     <a href="https://lib.ipb.ac.id/" target="_blank" class="btn btn-lg">📚 Buka Perpustakaan IPB</a>
   </main>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Perpustakaan - Daftar Buku</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .buku {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .buku-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 200px;
-            text-align: center;
-        }
-        .buku-item img {
-            max-width: 100%;
-            height: auto;
-        }
-        .buku-item a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
 
-    <h1>Daftar Buku Perpustakaan</h1>
+  <section class="book-section">
+    <div class="container">
+      <h2 class="text-center mb-5">📖 Daftar Buku Digital</h2>
+      <div class="row justify-content-center g-4">
 
-    <div class="buku">
-        <div class="buku-item">
-            <img src="https://ebooks.gramedia.com/ebook-covers/39732/big_covers/ID_GPU2017MTH08TTDT_B.jpg" alt="Cover Buku 1">
-            <p><a href="https://mirror.smk-yadika-bangil.sch.id/index.php?p=fstream-pdf&fid=146&bid=272" target="_blank">Teror Diari Tua</a></p>
+        <!-- Buku 1 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card book-card h-100">
+            <img src="https://ebooks.gramedia.com/ebook-covers/39732/big_covers/ID_GPU2017MTH08TTDT_B.jpg" class="card-img-top" alt="Teror Diari Tua">
+            <div class="card-body text-center">
+              <h5 class="card-title">Teror Diari Tua</h5>
+              <a href="https://mirror.smk-yadika-bangil.sch.id/index.php?p=fstream-pdf&fid=146&bid=272" target="_blank" class="btn btn-warning">Baca Buku</a>
+            </div>
+          </div>
         </div>
-        <div class="buku-item">
-            <img src="https://s3-ap-southeast-1.amazonaws.com/ebook-previews/1682/10530/1.jpg" alt="Cover Buku 2">
-            <p><a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=7&bid=772" target="_blank">Negeri 5 Menara</a></p>
+
+        <!-- Buku 2 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card book-card h-100">
+            <img src="https://s3-ap-southeast-1.amazonaws.com/ebook-previews/1682/10530/1.jpg" class="card-img-top" alt="Negeri 5 Menara">
+            <div class="card-body text-center">
+              <h5 class="card-title">Negeri 5 Menara</h5>
+              <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=7&bid=772" target="_blank" class="btn btn-warning">Baca Buku</a>
+            </div>
+          </div>
         </div>
-        <div class="buku-item">
-            <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/11/27/kjf6cgigkomf6sy9o5qauu.jpg" alt="Cover Buku 3">
-            <p><a href="https://rakyatfilsafat.com/wp-content/uploads/2022/01/filosofi-teraspdf.pdf"_blank">Filosofi Teras</a></p>
+
+        <!-- Buku 3 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card book-card h-100">
+            <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/11/27/kjf6cgigkomf6sy9o5qauu.jpg" class="card-img-top" alt="Filosofi Teras">
+            <div class="card-body text-center">
+              <h5 class="card-title">Filosofi Teras</h5>
+              <a href="https://rakyatfilsafat.com/wp-content/uploads/2022/01/filosofi-teraspdf.pdf" target="_blank" class="btn btn-warning">Baca Buku</a>
+            </div>
+          </div>
         </div>
-        <div class="buku-item">
-            <img src="https://www.gramedia.com/blog/content/images/2022/05/1--4-.jpg" alt="Cover Buku 4">
-            <p><a href="http://103.44.149.34/elib/assets/buku/Tere_Liye_-_Bintang.pdf" target="_blank">Bintang</a></p>
+
+        <!-- Buku 4 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card book-card h-100">
+            <img src="https://www.gramedia.com/blog/content/images/2022/05/1--4-.jpg" class="card-img-top" alt="Bintang">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bintang</h5>
+              <a href="http://103.44.149.34/elib/assets/buku/Tere_Liye_-_Bintang.pdf" target="_blank" class="btn btn-warning">Baca Buku</a>
+            </div>
+          </div>
         </div>
-        <div class="buku-item">
-            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" alt="Cover Buku 5">
-            <p><a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank">Bumi Manusia</a></p>
+
+        <!-- Buku 5 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card book-card h-100">
+            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="card-img-top" alt="Bumi Manusia">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bumi Manusia</h5>
+              <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-warning">Baca Buku</a>
+            </div>
+          </div>
         </div>
+
+      </div>
     </div>
-
-</body>
-</html>
+  </section>
 
   <footer>
     &copy; 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
