@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Perkalian - Perpustakaan Maria</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #D06224, #8A8635);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3b2f1b;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #f0c8a0;
+        }
+
+        main {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 700px;
+            background-color: #ffffffcc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            text-align: center;
+            color: #000000; /* warna teks tabel jadi hitam */
+        }
+
+        th {
+            background-color: #f0c8a0;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff7f0;
+        }
+
+        .calculator {
+            margin-top: 50px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            background-color: #f0c8a0;
+            color: #3b2f1b;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0a86e;
+        }
+
+        #hasil {
+            font-weight: bold;
+            font-size: 18px;
+            color: #003300;
+        }
+
+        footer {
+            background-color: #f0c8a0;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #3b2f1b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Perpustakaan Maria</h2>
+    </header>
+
+    <main>
+        <h1>Tabel Perkalian 1–10</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+                        <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+                    <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
+                    <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
+                    <tr><th>4</th><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td><td>24</td><td>28</td><td>32</td><td>36</td><td>40</td></tr>
+                    <tr><th>5</th><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
+                    <tr><th>6</th><td>6</td><td>12</td><td>18</td><td>24</td><td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td></tr>
+                    <tr><th>7</th><td>7</td><td>14</td><td>21</td><td>28</td><td>35</td><td>42</td><td>49</td><td>56</td><td>63</td><td>70</td></tr>
+                    <tr><th>8</th><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td><td>48</td><td>56</td><td>64</td><td>72</td><td>80</td></tr>
+                    <tr><th>9</th><td>9</td><td>18</td><td>27</td><td>36</td><td>45</td><td>54</td><td>63</td><td>72</td><td>81</td><td>90</td></tr>
+                    <tr><th>10</th><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="calculator">
+            <h1>Hitung Perkalian</h1>
+            <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+            <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+            <br>
+            <button onclick="hitungPerkalian()">Hitung</button>
+            <p>Hasil: <span id="hasil">-</span></p>
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
+    </footer>
+
+    <script>
+        function hitungPerkalian() {
+            const a = parseFloat(document.getElementById("angka1").value);
+            const b = parseFloat(document.getElementById("angka2").value);
+            const hasilEl = document.getElementById("hasil");
+
+            if (isNaN(a) || isNaN(b)) {
+                hasilEl.textContent = "Mohon masukkan dua angka.";
+            } else {
+                hasilEl.textContent = a * b;
+            }
+        }
+    </script>
+
+</body>
+</html>
