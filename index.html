@@ -2,207 +2,166 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Perpustakaan Digital Maria</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background-color: #D06224;
-      font-family: Arial, sans-serif;
-      color: #FFFFFF;
-    }
-
     body {
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
+      background: linear-gradient(135deg, #f2eadd 0%, #d9cbb6 100%);
+      color: #4b3b2b;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
     }
 
     header {
-      background-color: #8A8635;
+      background-color: #6e5841;
       padding: 15px 30px;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(110, 88, 65, 0.5);
     }
 
     .logo {
-      font-size: 1.5em;
+      font-size: 1.6em;
       font-weight: bold;
-      color: #FFFFFF;
     }
 
     nav .menu {
       list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       gap: 20px;
+      margin: 0;
+      padding: 0;
     }
 
     nav .menu li a {
+      color: #fff;
+      font-weight: 600;
       text-decoration: none;
-      color: #FFFFFF;
-      font-weight: bold;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
     nav .menu li a:hover {
-      text-decoration: underline;
-      color: #FFD700;
+      color: #c2b280;
+      text-shadow: 1px 1px 2px #5a4632;
     }
 
     main {
-      flex: 1;
       text-align: center;
       padding: 50px 20px;
-      opacity: 0;
-      animation: fadeInMain 1s ease-out 1s forwards;
     }
 
     h1 {
       font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #FFFFFF;
-      animation: fadeInTitle 1s ease-out forwards;
+      color: #5a4632;
     }
 
-    p.description {
-      font-size: 1.3em;
+    .description {
+      font-size: 1.2em;
+      color: #7a5f3c;
       font-style: italic;
-      color: #F4C542;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      animation: fadeInDescription 1s ease-out 0.5s forwards;
     }
 
-    .btn {
-      display: inline-block;
-      background-color: #FFD700;
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 20px;
-      font-size: 1.1em;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      animation: bounceBtn 1s ease-out 1.5s forwards;
-    }
-
-    .btn:hover {
-      background-color: #FFB200;
-      transform: translateY(-5px);
-    }
-
-    .book-section {
-      background-color: #FFF3E0;
-      color: #000;
-      padding: 50px 20px;
-    }
-
-    .book-card {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    .btn-earthy {
+      background-color: #c2b280;
+      color: #4b3b2b;
+      border: 2px solid transparent;
+      padding: 12px 28px;
       border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(194, 178, 128, 0.4);
+      transition: all 0.4s ease;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .btn-earthy:hover {
+      background-color: #a8996b;
+      color: #fff;
+      border-color: #8b7c4a;
+      box-shadow: 0 6px 15px rgba(168, 153, 107, 0.7);
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+
+    .book-section, .event-section {
+      padding: 50px 20px;
+      background-color: #f8f3ea;
+    }
+
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(110, 88, 65, 0.15);
+      transition: box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 25px rgba(110, 88, 65, 0.3);
+    }
+
+    .card-img-top {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .card-body {
+      padding: 15px;
+      text-align: center;
+      flex-grow: 1;
     }
 
     footer {
-      background-color: #8A8635;
-      color: #FFFFFF;
+      background-color: #6e5841;
+      color: #fff;
       text-align: center;
       padding: 20px 10px;
-      animation: fadeInFooter 1s ease-out 2s forwards;
+      font-weight: 600;
+      letter-spacing: 0.03em;
     }
 
-    /* Event Section Styles */
-    .event-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    .event-item {
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 10px;
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #dac8b3;
+      color: #4b3b2b;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-      background-color: #fff;
-      color: #000;
+      padding: 10px;
+      display: none;
+      z-index: 1000;
     }
 
-    .event-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .event-item img {
-      width: 100%;
-      height: auto;
+    .cookie-banner button {
+      background-color: #6e5841;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      margin-left: 10px;
       border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .event-item a {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    .event-item a:hover {
-      text-decoration: underline;
-    }
-
-    .event-item p {
-      font-size: 14px;
-      color: #555;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 600px) {
-      .event-item {
-        width: 100%;
+    @media (max-width: 768px) {
+      nav .menu {
+        flex-direction: column;
+        gap: 10px;
       }
-    }
-
-    /* Animations */
-    @keyframes fadeInMain {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInTitle {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInDescription {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes bounceBtn {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes fadeInFooter {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-
-  <header class="d-flex justify-content-between align-items-center p-3">
+  <header class="d-flex justify-content-between align-items-center">
     <div class="logo">Perpustakaan Maria</div>
     <nav>
-      <ul class="menu d-flex gap-4">
+      <ul class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -212,25 +171,24 @@
     </nav>
   </header>
 
-  <main class="container">
+  <main>
     <h1>Selamat Datang di Perpustakaan Online Maria</h1>
     <p class="description">Temukan berbagai koleksi literasi digital untuk mendukung pendidikan dan penelitian Anda.</p>
     <p>Ingin jelajah koleksi digital kampus ternama? Yuk langsung akses pustaka IPB di bawah ini!</p>
-    <a href="https://lib.ipb.ac.id/" target="_blank" class="btn btn-lg">📚 Buka Perpustakaan IPB</a>
+    <a href="https://lib.ipb.ac.id/" target="_blank" class="btn-earthy">📚 Buka Perpustakaan IPB</a>
   </main>
 
   <section class="book-section">
     <div class="container">
       <h2 class="text-center mb-5">📖 Daftar Buku Digital</h2>
-      <div class="row justify-content-center g-4">
-
+      <div class="row g-4 justify-content-center">
         <!-- Buku 1 -->
         <div class="col-md-4 col-sm-6">
           <div class="card book-card h-100">
             <img src="https://ebooks.gramedia.com/ebook-covers/39732/big_covers/ID_GPU2017MTH08TTDT_B.jpg" class="card-img-top" alt="Teror Diari Tua">
             <div class="card-body text-center">
               <h5 class="card-title">Teror Diari Tua</h5>
-              <a href="https://mirror.smk-yadika-bangil.sch.id/index.php?p=fstream-pdf&fid=146&bid=272" target="_blank" class="btn btn-warning">Baca Buku</a>
+              <a href="https://mirror.smk-yadika-bangil.sch.id/index.php?p=fstream-pdf&fid=146&bid=272" target="_blank" class="btn btn-earthy">Baca Buku</a>
             </div>
           </div>
         </div>
@@ -241,7 +199,7 @@
             <img src="https://s3-ap-southeast-1.amazonaws.com/ebook-previews/1682/10530/1.jpg" class="card-img-top" alt="Negeri 5 Menara">
             <div class="card-body text-center">
               <h5 class="card-title">Negeri 5 Menara</h5>
-              <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=7&bid=772" target="_blank" class="btn btn-warning">Baca Buku</a>
+              <a href="https://smpn32.semarangkota.go.id/e-perpus/index.php?p=fstream&fid=7&bid=772" target="_blank" class="btn btn-earthy">Baca Buku</a>
             </div>
           </div>
         </div>
@@ -252,7 +210,7 @@
             <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/11/27/kjf6cgigkomf6sy9o5qauu.jpg" class="card-img-top" alt="Filosofi Teras">
             <div class="card-body text-center">
               <h5 class="card-title">Filosofi Teras</h5>
-              <a href="https://rakyatfilsafat.com/wp-content/uploads/2022/01/filosofi-teraspdf.pdf" target="_blank" class="btn btn-warning">Baca Buku</a>
+              <a href="https://rakyatfilsafat.com/wp-content/uploads/2022/01/filosofi-teraspdf.pdf" target="_blank" class="btn btn-earthy">Baca Buku</a>
             </div>
           </div>
         </div>
@@ -263,7 +221,7 @@
             <img src="https://www.gramedia.com/blog/content/images/2022/05/1--4-.jpg" class="card-img-top" alt="Bintang">
             <div class="card-body text-center">
               <h5 class="card-title">Bintang</h5>
-              <a href="http://103.44.149.34/elib/assets/buku/Tere_Liye_-_Bintang.pdf" target="_blank" class="btn btn-warning">Baca Buku</a>
+              <a href="http://103.44.149.34/elib/assets/buku/Tere_Liye_-_Bintang.pdf" target="_blank" class="btn btn-earthy">Baca Buku</a>
             </div>
           </div>
         </div>
@@ -274,59 +232,78 @@
             <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565658920i/1398034.jpg" class="card-img-top" alt="Bumi Manusia">
             <div class="card-body text-center">
               <h5 class="card-title">Bumi Manusia</h5>
-              <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-warning">Baca Buku</a>
+              <a href="https://mtsaluswahbergas.sch.id/wp-content/uploads/2024/11/Bumi-Manusia-by-Pramoedya-Ananta-Toer.pdf" target="_blank" class="btn btn-earthy">Baca Buku</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <section>
-    <h1 style="text-align:center; margin-top:40px; color:#333;">Event Perpustakaan Terbaru</h1>
-    <div class="event-container">
-      <div class="event-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrIrGHcdLW08U5Iyxpsc1NTbdCtiE8OhWvA&s" alt="Poster International Essay Competition - Perpustakaan 2025">
-        <a href="https://www.instagram.com/p/DJfnA1dSPY9/?igsh=MXV2a3ludGg2eTY5Zg==" target="_blank">International Essay Competition</a>
-        <p>Pelatihan gratis untuk pelajar dan guru tentang penggunaan teknologi informasi.</p>
-      </div>
-      <div class="event-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxzb1SCRnvZ7mgEeISIoKLFpjOBU3NJZhCZA&s" alt="Poster Lomba Cipta Puisi - Perpustakaan 2025">
-        <a href="https://www.instagram.com/p/DJGLqFZxIsi/?igsh=MXU3aHJ3NTI2N2s2bA==" target="_blank">Lomba Cipta Puisi</a>
-        <p>Ajang kreativitas membaca puisi bagi siswa dari seluruh Indonesia.</p>
-      </div>
-      <div class="event-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5RUcykSN_w06QlLTAoih5O0907Go-xS8Ebw&s" alt="Poster Pameran Buku dan Diskon - Perpustakaan 2025">
-        <a href="https://www.instagram.com/p/DInMLkoRc8I/?utm_source=ig_web_copy_link" target="_blank">Pameran Buku & Diskon Besar</a>
-        <p>Dapatkan diskon menarik untuk koleksi buku terbaru dan klasik.</p>
+  <section class="event-section">
+    <div class="container">
+      <h2 class="text-center mb-5">📅 Event Perpustakaan Terbaru</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Event 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrIrGHcdLW08U5Iyxpsc1NTbdCtiE8OhWvA&s" class="card-img-top" alt="Poster Essay">
+            <div class="card-body">
+              <h5 class="card-title">International Essay Competition</h5>
+              <p class="card-text">Pelatihan gratis untuk pelajar dan guru tentang penggunaan teknologi informasi.</p>
+              <a href="https://www.instagram.com/p/DJfnA1dSPY9/?igsh=MXV2a3ludGg2eTY5Zg==" target="_blank" class="btn btn-earthy">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTykzpSkAyrP3fznR_2pOKH9JPiZ18MY0f3CHQ&s" class="card-img-top" alt="Poster Seminar">
+            <div class="card-body">
+              <h5 class="card-title">Seminar Literasi Digital</h5>
+              <p class="card-text">Seminar dengan narasumber ahli dari berbagai universitas di Indonesia.</p>
+              <a href="https://www.instagram.com/p/DJfnA1dSPY9/?igsh=MXV2a3ludGg2eTY5Zg==" target="_blank" class="btn btn-earthy">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkO4aQ2SHNwAKIF2gXJOlxtKzjvJc8Ghs26AQ&s" class="card-img-top" alt="Poster Workshop">
+            <div class="card-body">
+              <h5 class="card-title">Workshop Menulis Kreatif</h5>
+              <p class="card-text">Pelatihan menulis kreatif untuk siswa dan mahasiswa.</p>
+              <a href="https://www.instagram.com/p/DJfnA1dSPY9/?igsh=MXV2a3ludGg2eTY5Zg==" target="_blank" class="btn btn-earthy">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
+    <p>&copy; 2025 Perpustakaan Maria. All Rights Reserved.</p>
   </footer>
 
-  <!-- Bootstrap JS and Popper.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<div class="cookie-banner" id="cookie-banner">
-    Situs ini menggunakan cookie untuk meningkatkan pengalaman pengguna. 
-    <button onclick="acceptCookies()">Saya Setuju</button>
-</div>
+  <div class="cookie-banner" id="cookie-banner">
+    <span>Website ini menggunakan cookies untuk meningkatkan pengalaman Anda.</span>
+    <button id="accept-cookies">Terima</button>
+  </div>
 
-<script>
-    function acceptCookies() {
-        localStorage.setItem("cookieAccepted", "true");
-        document.getElementById("cookie-banner").style.display = "none";
+  <script>
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    if (!localStorage.getItem('cookiesAccepted')) {
+      cookieBanner.style.display = 'block';
     }
 
-    window.onload = function () {
-        if (!localStorage.getItem("cookieAccepted")) {
-            document.getElementById("cookie-banner").style.display = "block";
-        }
-    };
-</script>
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
