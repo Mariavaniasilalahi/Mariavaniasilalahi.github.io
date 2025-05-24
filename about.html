@@ -2,219 +2,485 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Perpustakaan Maria (Earthy Theme + Animasi)</title>
   <style>
+    * {
+      box-sizing: border-box;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #D06224; /* Terracotta */
-      color: #4B0082;
+      font-family: 'Georgia', serif;
+      background-color: #FAF5E4;
+      color: #4B3B2B;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      transition: background-color 0.3s ease;
+      line-height: 1.6;
+      transition: background-color 0.8s ease, color 0.8s ease;
     }
 
     header {
-      background-color: #8A8635; /* Olive */
+      background-color: #6B4C3B;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      animation: fadeInHeader 0.8s ease-out;
+      box-shadow: 0 4px 10px rgba(107,76,59,0.3);
+      user-select: none;
     }
 
     .logo {
-      font-size: 2em;
-      font-weight: bold;
-      color: #FFFFFF;
-      animation: fadeInLogo 0.8s ease-out;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #F0E1C6;
+      letter-spacing: 2px;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      user-select: none;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
 
-    nav .menu {
+    .logo:hover {
+      transform: scale(1.05);
+      cursor: default;
+    }
+
+    nav ul.menu {
       list-style: none;
       display: flex;
-      gap: 30px;
+      gap: 32px;
       margin: 0;
       padding: 0;
-      animation: fadeInNav 0.8s ease-out;
     }
 
-    nav .menu li a {
+    nav ul.menu li a {
+      color: #F0E1C6;
+      font-weight: 700;
+      font-size: 1.15rem;
       text-decoration: none;
-      color: #FFFFFF;
-      font-weight: bold;
-      font-size: 1.1em;
-      transition: color 0.3s;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-family: 'Georgia', serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    nav .menu li a:hover {
-      color: #FFD700; /* Gold */
+    nav ul.menu li a:hover,
+    nav ul.menu li a:focus {
+      background-color: #D9B08C;
+      color: #4B3B2B;
+      outline: none;
+      box-shadow: 0 0 8px #D9B08C88;
+    }
+
+    .mode-toggle {
+      padding: 10px 30px;
+      text-align: right;
+      user-select: none;
+    }
+
+    .mode-toggle button {
+      background-color: #D9B08C;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #4B3B2B;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(107,76,59,0.5);
+      transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Georgia', serif;
+      user-select: none;
+    }
+
+    .mode-toggle button:hover,
+    .mode-toggle button:focus {
+      background-color: #c29b75;
+      color: #3a2f21;
+      outline: none;
+      box-shadow: 0 6px 20px #c29b7580;
+      transform: scale(1.08);
     }
 
     main {
       flex: 1;
       padding: 50px 30px;
       text-align: center;
-      animation: fadeInMain 0.8s ease-out;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: 'Georgia', serif;
     }
 
-    h2 {
-      font-size: 2.5em;
-      color: #FFFFFF;
-      margin-bottom: 20px;
-      animation: slideUpTitle 0.8s ease-out;
+    main h2 {
+      font-size: 3rem;
+      color: #A37758;
+      margin-bottom: 1rem;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 2px #D9B08C;
+      transition: color 0.6s ease;
     }
 
     p.description {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-size: 1.1em;
-      color: #F4C542; /* Cream */
+      font-size: 1.2rem;
+      color: #5B4B3B;
       font-style: italic;
-      letter-spacing: 1px;
-      line-height: 1.6;
-      animation: fadeInDescription 0.8s ease-out;
+      letter-spacing: 0.8px;
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      user-select: text;
+      transition: color 0.6s ease;
     }
 
+    p.description a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #6B4C3B;
+      text-decoration: none;
+      transition: color 0.4s ease;
+    }
+
+    p.description a img {
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      filter: drop-shadow(0 0 1px #A37758);
+      transition: filter 0.4s ease;
+    }
+
+    p.description a:hover,
+    p.description a:focus {
+      color: #D9B08C;
+      outline: none;
+    }
+
+    p.description a:hover img,
+    p.description a:focus img {
+      filter: drop-shadow(0 0 6px #D9B08C);
+    }
+
+    p.description a.download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #D9B08C;
+      color: #4B3B2B;
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.4s ease;
+      font-family: 'Georgia', serif;
+      box-shadow: 0 4px 12px rgba(107,76,59,0.4);
+      user-select: none;
+    }
+
+    p.description a.download-btn:hover,
+    p.description a.download-btn:focus {
+      background-color: #c29b75;
+      color: #3a2f21;
+      outline: none;
+      box-shadow: 0 6px 20px #c29b7580;
+      transform: scale(1.05);
+    }
+
+    /* Grid-based Table */
     table {
-      width: 70%;
+      width: 100%;
+      max-width: 700px;
       margin: 0 auto;
-      border-collapse: collapse;
-      background: white;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      animation: fadeInTable 0.8s ease-out;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      background-color: #E6D6C3;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(107,76,59,0.3);
+      user-select: none;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      transition: background-color 0.6s ease;
+    }
+
+    thead tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #D9B08C;
+      color: #4B3B2B;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 0 -2px 5px #A3775880;
+      user-select: none;
+    }
+
+    tbody tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #F1E9DC;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(107,76,59,0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    tbody tr:hover {
+      background-color: #D9B08C;
+      color: #4B3B2B;
+      cursor: default;
+      box-shadow: 0 4px 15px rgba(107,76,59,0.3);
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     th, td {
-      padding: 15px;
-      border: 1px solid #ddd;
+      padding: 14px 20px;
+      border: none;
       text-align: center;
-      font-size: 1.1em;
+      font-size: 1.1rem;
+      align-self: center;
+      user-select: none;
     }
 
-    th {
-      background-color: #F8B400;
-      color: white;
-      font-weight: bold;
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      main {
+        padding: 30px 20px;
+      }
+
+      main h2 {
+        font-size: 2.4rem;
+      }
+
+      p.description {
+        font-size: 1.05rem;
+        padding: 0 10px;
+      }
+
+      table {
+        max-width: 100%;
+      }
+
+      thead tr,
+      tbody tr {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      th, td {
+        padding: 12px 16px;
+      }
+
+      tbody tr {
+        margin-bottom: 15px;
+        border-radius: 12px;
+      }
     }
 
-    a {
-      text-decoration: none;
-      color: #0073e6;
-      font-weight: bold;
-      transition: color 0.3s ease;
+    @media print {
+      header, nav, footer, .mode-toggle {
+        display: none;
+      }
+
+      body {
+        background-color: white;
+        color: black;
+        font-size: 12pt;
+      }
+
+      table {
+        width: 100%;
+        border: 1px solid black;
+      }
+
+      th, td {
+        border: 1px solid black;
+      }
+
+      p.description a {
+        color: black;
+        text-decoration: underline;
+      }
     }
 
-    a:hover {
-      color: #FFD700;
+    /* Dark Mode */
+    .dark-mode {
+      background-color: #3B2F2F;
+      color: #D9B08C;
+    }
+
+    .dark-mode header,
+    .dark-mode footer {
+      background-color: #2B1F1F;
+      color: #D9B08C;
+      box-shadow: none;
+    }
+
+    .dark-mode nav ul.menu li a {
+      color: #D9B08C;
+    }
+
+    .dark-mode nav ul.menu li a:hover,
+    .dark-mode nav ul.menu li a:focus {
+      background-color: #A37758;
+      color: #FAF5E4;
+      box-shadow: 0 0 10px #A3775880;
+    }
+
+    .dark-mode main h2 {
+      color: #D9B08C;
+      text-shadow: 1px 1px 5px #A37758;
+    }
+
+    .dark-mode p.description {
+      color: #E6D6C3;
+    }
+
+    .dark-mode p.description a {
+      color: #D9B08C;
+    }
+
+    .dark-mode p.description a.download-btn {
+      background-color: #A37758;
+      color: #FAF5E4;
+      box-shadow: 0 4px 12px #A3775880;
+    }
+
+    .dark-mode p.description a.download-btn:hover,
+    .dark-mode p.description a.download-btn:focus {
+      background-color: #7d5a3c;
+      box-shadow: 0 6px 20px #7d5a3caa;
+    }
+
+    .dark-mode table {
+      background-color: #4B3B2B;
+      color: #D9B08C;
+      box-shadow: none;
+    }
+
+    .dark-mode thead tr {
+      background-color: #A37758;
+      color: #FAF5E4;
+      box-shadow: inset 0 -2px 5px #7d5a3c80;
+    }
+
+    .dark-mode tbody tr {
+      background-color: #6B4C3B;
+      box-shadow: 0 2px 8px #7d5a3c66;
+      color: #D9B08C;
+    }
+
+    .dark-mode tbody tr:hover {
+      background-color: #7d5a3c;
+      color: #FAF5E4;
+      box-shadow: 0 4px 15px #7d5a3caa;
     }
 
     footer {
-      background-color: #8A8635;
-      color: #FFFFFF;
+      background-color: #6B4C3B;
+      color: #F0E1C6;
       text-align: center;
       padding: 20px 10px;
-      animation: fadeInFooter 0.8s ease-out;
+      font-weight: 600;
+      font-size: 1rem;
+      user-select: none;
+      box-shadow: inset 0 3px 5px rgba(107,76,59,0.3);
+      font-family: 'Georgia', serif;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
-
-    /* Animations */
-    @keyframes fadeInHeader {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInLogo {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInNav {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInMain {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUpTitle {
-      0% { transform: translateY(20px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeInDescription {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes fadeInTable {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInFooter {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">Perpustakaan Maria</div>
+    <div class="logo" aria-label="Perpustakaan Maria">Perpustakaan Maria</div>
     <nav>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+      <ul class="menu" role="menubar">
+        <li role="none"><a role="menuitem" href="index.html" tabindex="0">Home</a></li>
+        <li role="none"><a role="menuitem" href="contact.html" tabindex="0">Contact Us</a></li>
       </ul>
     </nav>
   </header>
+
+  <div class="mode-toggle">
+    <button aria-pressed="false" aria-label="Toggle dark mode" id="modeToggle" onclick="toggleMode()">
+      🌙 Mode Gelap
+    </button>
+  </div>
 
   <main>
     <h2>About Us</h2>
     <p class="description">
       Halo! Saya <strong>Maria Vania Silalahi</strong>, mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Saya memiliki ketertarikan besar dalam dunia literasi, pengelolaan informasi, dan pengembangan perpustakaan berbasis teknologi. Website ini saya buat sebagai bagian dari pengenalan diri dan kontribusi terhadap literasi digital.
+      <br /><br />
+      <a href="https://www.linkedin.com/in/maria-silalahi-175341366/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi LinkedIn Maria Vania Silalahi">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" />
+        Kunjungi LinkedIn Saya
+      </a>
+      <br /><br />
+      <a href="resume-maria.pdf" download class="download-btn" aria-label="Unduh resume Maria Vania Silalahi dalam format PDF">
+        Unduh Resume (PDF)
+      </a>
     </p>
-    <table>
-      <tr>
-        <th>Informasi</th>
-        <th>Detail</th>
-      </tr>
-      <tr>
-        <td>Nama</td>
-        <td>Maria Vania Silalahi</td>
-      </tr>
-      <tr>
-        <td>NIM</td>
-        <td>220709022</td>
-      </tr>
-      <tr>
-        <td>Program Studi</td>
-        <td>Perpustakaan dan Sains Informasi</td>
-      </tr>
-      <tr>
-        <td>Fakultas</td>
-        <td>Ilmu Budaya</td>
-      </tr>
-      <tr>
-        <td>Perguruan Tinggi</td>
-        <td>Universitas Sumatera Utara</td>
-      </tr>
-      <tr>
-        <td>E-Mail</td>
-        <td>mariaavaniaa.s@gmail.com</td>
-      </tr>
+
+    <table role="table" aria-label="Informasi pribadi Maria Vania Silalahi">
+      <thead>
+        <tr>
+          <th scope="col">Informasi</th>
+          <th scope="col">Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nama</td>
+          <td>Maria Vania Silalahi</td>
+        </tr>
+        <tr>
+          <td>NIM</td>
+          <td>220709022</td>
+        </tr>
+        <tr>
+          <td>Program Studi</td>
+          <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+          <td>Fakultas</td>
+          <td>Ilmu Budaya</td>
+        </tr>
+        <tr>
+          <td>Universitas</td>
+          <td>Universitas Sumatera Utara</td>
+        </tr>
+      </tbody>
     </table>
   </main>
 
   <footer>
-    &copy; 2025 Perpustakaan Maria. Terima kasih telah mengunjungi perpustakaan kami.
+    © 2025 Maria Vania Silalahi — Program Studi Perpustakaan dan Sains Informasi, USU
   </footer>
 
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const button = document.getElementById('modeToggle');
+      if(body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        button.textContent = '🌙 Mode Gelap';
+        button.setAttribute('aria-pressed', 'false');
+      } else {
+        body.classList.add('dark-mode');
+        button.textContent = '☀️ Mode Terang';
+        button.setAttribute('aria-pressed', 'true');
+      }
+    }
+  </script>
 </body>
 </html>
