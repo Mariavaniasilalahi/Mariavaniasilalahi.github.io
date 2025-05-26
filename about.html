@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - Perpustakaan Maria (Earthy Theme + Animasi)</title>
+  <title>About Us - Perpustakaan Maria</title>
   <style>
     * {
       box-sizing: border-box;
-      transition: background-color 0.5s ease, color 0.5s ease;
+      transition: all 0.3s ease;
     }
 
     body {
@@ -18,394 +18,171 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      line-height: 1.6;
-      transition: background-color 0.8s ease, color 0.8s ease;
     }
 
     header {
       background-color: #6B4C3B;
-      padding: 20px 40px;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(107,76,59,0.3);
-      user-select: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .logo {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: #F0E1C6;
-      letter-spacing: 2px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-      user-select: none;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #FAF5E4;
+      letter-spacing: 1px;
     }
 
-    .logo:hover {
-      transform: scale(1.05);
-      cursor: default;
-    }
-
-    nav ul.menu {
+    nav ul {
       list-style: none;
       display: flex;
-      gap: 32px;
+      gap: 1.5rem;
       margin: 0;
       padding: 0;
     }
 
-    nav ul.menu li a {
-      color: #F0E1C6;
-      font-weight: 700;
-      font-size: 1.15rem;
+    nav ul li a {
+      color: #FAF5E4;
       text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-family: 'Georgia', serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
     }
 
-    nav ul.menu li a:hover,
-    nav ul.menu li a:focus {
+    nav ul li a:hover {
       background-color: #D9B08C;
       color: #4B3B2B;
-      outline: none;
-      box-shadow: 0 0 8px #D9B08C88;
     }
 
     .mode-toggle {
-      padding: 10px 30px;
       text-align: right;
-      user-select: none;
+      margin: 1rem;
     }
 
     .mode-toggle button {
       background-color: #D9B08C;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 24px;
-      font-weight: 700;
-      font-size: 1rem;
       color: #4B3B2B;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(107,76,59,0.5);
-      transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Georgia', serif;
-      user-select: none;
-    }
-
-    .mode-toggle button:hover,
-    .mode-toggle button:focus {
-      background-color: #c29b75;
-      color: #3a2f21;
-      outline: none;
-      box-shadow: 0 6px 20px #c29b7580;
-      transform: scale(1.08);
     }
 
     main {
       flex: 1;
-      padding: 50px 30px;
+      padding: 2rem;
       text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-      font-family: 'Georgia', serif;
     }
 
-    main h2 {
-      font-size: 3rem;
+    h2 {
       color: #A37758;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      letter-spacing: 1.5px;
-      text-shadow: 1px 1px 2px #D9B08C;
-      transition: color 0.6s ease;
     }
 
-    p.description {
-      font-size: 1.2rem;
+    .description {
+      font-size: 1.1rem;
       color: #5B4B3B;
-      font-style: italic;
-      letter-spacing: 0.8px;
-      max-width: 720px;
-      margin: 0 auto 40px auto;
-      user-select: text;
-      transition: color 0.6s ease;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
     }
 
-    p.description a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
+    .description a {
       color: #6B4C3B;
       text-decoration: none;
-      transition: color 0.4s ease;
+      font-weight: bold;
     }
 
-    p.description a img {
+    .description a img {
       vertical-align: middle;
       width: 24px;
       height: 24px;
-      filter: drop-shadow(0 0 1px #A37758);
-      transition: filter 0.4s ease;
+      margin-right: 8px;
     }
 
-    p.description a:hover,
-    p.description a:focus {
-      color: #D9B08C;
-      outline: none;
-    }
-
-    p.description a:hover img,
-    p.description a:focus img {
-      filter: drop-shadow(0 0 6px #D9B08C);
-    }
-
-    p.description a.download-btn {
-      display: inline-block;
-      margin-top: 15px;
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background-color: #D9B08C;
-      color: #4B3B2B;
-      padding: 14px 32px;
+      padding: 0.8rem 1.5rem;
       border-radius: 10px;
+      color: #4B3B2B;
       text-decoration: none;
-      font-weight: 700;
-      transition: background-color 0.4s ease;
-      font-family: 'Georgia', serif;
-      box-shadow: 0 4px 12px rgba(107,76,59,0.4);
-      user-select: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
-    p.description a.download-btn:hover,
-    p.description a.download-btn:focus {
+    .download-btn:hover {
       background-color: #c29b75;
-      color: #3a2f21;
-      outline: none;
-      box-shadow: 0 6px 20px #c29b7580;
-      transform: scale(1.05);
     }
 
-    /* Grid-based Table */
     table {
       width: 100%;
       max-width: 700px;
-      margin: 0 auto;
-      border-collapse: separate;
-      border-spacing: 0 10px;
-      background-color: #E6D6C3;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(107,76,59,0.3);
-      user-select: none;
-      font-family: 'Georgia', serif;
-      overflow: hidden;
-      transition: background-color 0.6s ease;
-    }
-
-    thead tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background-color: #D9B08C;
-      color: #4B3B2B;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 12px 12px 0 0;
-      box-shadow: inset 0 -2px 5px #A3775880;
-      user-select: none;
-    }
-
-    tbody tr {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background-color: #F1E9DC;
-      margin-bottom: 12px;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      background-color: #EFE6DD;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(107,76,59,0.15);
-      transition: background-color 0.3s ease;
-    }
-
-    tbody tr:hover {
-      background-color: #D9B08C;
-      color: #4B3B2B;
-      cursor: default;
-      box-shadow: 0 4px 15px rgba(107,76,59,0.3);
-      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow: hidden;
     }
 
     th, td {
-      padding: 14px 20px;
-      border: none;
-      text-align: center;
-      font-size: 1.1rem;
-      align-self: center;
-      user-select: none;
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #d3c4b5;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-      }
-
-      main {
-        padding: 30px 20px;
-      }
-
-      main h2 {
-        font-size: 2.4rem;
-      }
-
-      p.description {
-        font-size: 1.05rem;
-        padding: 0 10px;
-      }
-
-      table {
-        max-width: 100%;
-      }
-
-      thead tr,
-      tbody tr {
-        grid-template-columns: 1fr;
-        text-align: left;
-      }
-
-      th, td {
-        padding: 12px 16px;
-      }
-
-      tbody tr {
-        margin-bottom: 15px;
-        border-radius: 12px;
-      }
-    }
-
-    @media print {
-      header, nav, footer, .mode-toggle {
-        display: none;
-      }
-
-      body {
-        background-color: white;
-        color: black;
-        font-size: 12pt;
-      }
-
-      table {
-        width: 100%;
-        border: 1px solid black;
-      }
-
-      th, td {
-        border: 1px solid black;
-      }
-
-      p.description a {
-        color: black;
-        text-decoration: underline;
-      }
-    }
-
-    /* Dark Mode */
-    .dark-mode {
-      background-color: #3B2F2F;
-      color: #D9B08C;
-    }
-
-    .dark-mode header,
-    .dark-mode footer {
-      background-color: #2B1F1F;
-      color: #D9B08C;
-      box-shadow: none;
-    }
-
-    .dark-mode nav ul.menu li a {
-      color: #D9B08C;
-    }
-
-    .dark-mode nav ul.menu li a:hover,
-    .dark-mode nav ul.menu li a:focus {
-      background-color: #A37758;
-      color: #FAF5E4;
-      box-shadow: 0 0 10px #A3775880;
-    }
-
-    .dark-mode main h2 {
-      color: #D9B08C;
-      text-shadow: 1px 1px 5px #A37758;
-    }
-
-    .dark-mode p.description {
-      color: #E6D6C3;
-    }
-
-    .dark-mode p.description a {
-      color: #D9B08C;
-    }
-
-    .dark-mode p.description a.download-btn {
-      background-color: #A37758;
-      color: #FAF5E4;
-      box-shadow: 0 4px 12px #A3775880;
-    }
-
-    .dark-mode p.description a.download-btn:hover,
-    .dark-mode p.description a.download-btn:focus {
-      background-color: #7d5a3c;
-      box-shadow: 0 6px 20px #7d5a3caa;
-    }
-
-    .dark-mode table {
-      background-color: #4B3B2B;
-      color: #D9B08C;
-      box-shadow: none;
-    }
-
-    .dark-mode thead tr {
-      background-color: #A37758;
-      color: #FAF5E4;
-      box-shadow: inset 0 -2px 5px #7d5a3c80;
-    }
-
-    .dark-mode tbody tr {
-      background-color: #6B4C3B;
-      box-shadow: 0 2px 8px #7d5a3c66;
-      color: #D9B08C;
-    }
-
-    .dark-mode tbody tr:hover {
-      background-color: #7d5a3c;
-      color: #FAF5E4;
-      box-shadow: 0 4px 15px #7d5a3caa;
+    th {
+      background-color: #D9B08C;
+      color: #4B3B2B;
     }
 
     footer {
       background-color: #6B4C3B;
-      color: #F0E1C6;
+      color: #FAF5E4;
       text-align: center;
-      padding: 20px 10px;
-      font-weight: 600;
-      font-size: 1rem;
-      user-select: none;
-      box-shadow: inset 0 3px 5px rgba(107,76,59,0.3);
-      font-family: 'Georgia', serif;
-      transition: background-color 0.5s ease, color 0.5s ease;
+      padding: 1rem;
+      font-size: 0.95rem;
+      margin-top: auto;
+    }
+
+    .dark-mode {
+      background-color: #2E2B29;
+      color: #E6D6C3;
+    }
+
+    .dark-mode header, .dark-mode footer {
+      background-color: #1F1B18;
+      color: #D9B08C;
+    }
+
+    .dark-mode nav ul li a {
+      color: #D9B08C;
+    }
+
+    .dark-mode .download-btn {
+      background-color: #A37758;
+      color: #FAF5E4;
+    }
+
+    .dark-mode .download-btn:hover {
+      background-color: #8a6140;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo" aria-label="Perpustakaan Maria">Perpustakaan Maria</div>
+    <div class="logo">Perpustakaan Maria</div>
     <nav>
-      <ul class="menu" role="menubar">
-        <li role="none"><a role="menuitem" href="index.html" tabindex="0">Home</a></li>
-        <li role="none"><a role="menuitem" href="contact.html" tabindex="0">Contact Us</a></li>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -419,59 +196,42 @@
   <main>
     <h2>About Us</h2>
     <p class="description">
-      Halo! Saya <strong>Maria Vania Silalahi</strong>, mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Saya memiliki ketertarikan besar dalam dunia literasi, pengelolaan informasi, dan pengembangan perpustakaan berbasis teknologi. Website ini saya buat sebagai bagian dari pengenalan diri dan kontribusi terhadap literasi digital.
+      Halo! Saya <strong>Maria Vania Silalahi</strong>, mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Saya memiliki ketertarikan besar dalam dunia literasi, pengelolaan informasi, dan pengembangan perpustakaan berbasis teknologi.
       <br /><br />
-      <a href="https://www.linkedin.com/in/maria-silalahi-175341366/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi LinkedIn Maria Vania Silalahi">
+      <a href="https://www.linkedin.com/in/maria-silalahi-175341366/" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Icon" />
         Kunjungi LinkedIn Saya
       </a>
       <br /><br />
-      <a href="resume-maria.pdf" download class="download-btn" aria-label="Unduh resume Maria Vania Silalahi dalam format PDF">
-        Unduh Resume (PDF)
+      <a class="download-btn" href="resume-maria.pdf" download>
+        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" />
+        Unduh Resume Saya
       </a>
     </p>
 
-    <table role="table" aria-label="Informasi pribadi Maria Vania Silalahi">
+    <table>
       <thead>
-        <tr>
-          <th scope="col">Informasi</th>
-          <th scope="col">Detail</th>
-        </tr>
+        <tr><th>Informasi</th><th>Detail</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Nama</td>
-          <td>Maria Vania Silalahi</td>
-        </tr>
-        <tr>
-          <td>NIM</td>
-          <td>220709022</td>
-        </tr>
-        <tr>
-          <td>Program Studi</td>
-          <td>Perpustakaan dan Sains Informasi</td>
-        </tr>
-        <tr>
-          <td>Fakultas</td>
-          <td>Ilmu Budaya</td>
-        </tr>
-        <tr>
-          <td>Universitas</td>
-          <td>Universitas Sumatera Utara</td>
-        </tr>
+        <tr><td>Nama</td><td>Maria Vania Silalahi</td></tr>
+        <tr><td>NIM</td><td>220709022</td></tr>
+        <tr><td>Program Studi</td><td>Perpustakaan dan Sains Informasi</td></tr>
+        <tr><td>Fakultas</td><td>Ilmu Budaya</td></tr>
+        <tr><td>Universitas</td><td>Universitas Sumatera Utara</td></tr>
       </tbody>
     </table>
   </main>
 
   <footer>
-    © 2025 Maria Vania Silalahi — Program Studi Perpustakaan dan Sains Informasi, USU
+    © 2025 Maria Vania Silalahi — Program Studi Perpustakaan dan Sains Informasi, Universitas Sumatera Utara
   </footer>
 
   <script>
     function toggleMode() {
       const body = document.body;
       const button = document.getElementById('modeToggle');
-      if(body.classList.contains('dark-mode')) {
+      if (body.classList.contains('dark-mode')) {
         body.classList.remove('dark-mode');
         button.textContent = '🌙 Mode Gelap';
         button.setAttribute('aria-pressed', 'false');
